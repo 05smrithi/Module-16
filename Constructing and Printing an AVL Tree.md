@@ -35,6 +35,8 @@ def Construct_AVL(L):
 L=[10,20,30,40,50,25]
 
 
+
+
 OUTPUT
 
 ![image](https://github.com/user-attachments/assets/aa6c828f-9d56-4182-9a27-bb41831f1c69)
