@@ -30,10 +30,8 @@ ALGORITHM:
 
 PYTHON PROGRAM
 
-# Searching a key on a B-tree in Python
 
 
-# Create a node
 class BTreeNode:
   def __init__(self, leaf=False):
     self.leaf = leaf
@@ -41,13 +39,11 @@ class BTreeNode:
     self.child = []
 
 
-# Tree
 class BTree:
   def __init__(self, t):
     self.root = BTreeNode(True)
     self.t = t
 
-    # Insert node
   def insert(self, k):
     root = self.root
     if len(root.keys) == (2 * self.t) - 1:
@@ -59,7 +55,7 @@ class BTree:
     else:
       self.insert_non_full(root, k)
 
-    # Insert nonfull
+ 
   def insert_non_full(self, x, k):
     i = len(x.keys) - 1
     if x.leaf:
@@ -78,7 +74,6 @@ class BTree:
           i += 1
       self.insert_non_full(x.child[i], k)
 
-    # Split the child
   def split_child(self, x, i):
     t = self.t
     y = x.child[i]
@@ -91,7 +86,7 @@ class BTree:
       z.child = y.child[t: 2 * t]
       y.child = y.child[0: t - 1]
 
-  # Print the tree
+
   def print_tree(self, x, l=0):
     print("Level ", l, " ", len(x.keys), end=":")
     for i in x.keys:
